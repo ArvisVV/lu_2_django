@@ -35,7 +35,7 @@ def upload_photo(request):
 def view_photo(request, photo_id):
     photo = models.Photo.objects.get(id=photo_id)
 
-    sql = 'SELECT * FROM photos_photo WHERE photos_photo.id = %s'
-    photo = models.Photo.objects.raw(sql, [photo_id])
+    # sql = 'SELECT * FROM photos_photo WHERE photos_photo.id = %s'
+    # photo = models.Photo.objects.raw(sql, [photo_id])
 
     return HttpResponse(f'Photo path: {photo.picture}')
